@@ -1,14 +1,10 @@
 
 q
 Asrc/main/java/com/alura/foro/foro/me/infra/services/DatosJwt.java,b\b\bb3bc98731b15c53c17961520161f582b7f025db
-l
-<src/main/java/com/alura/foro/foro/me/AppForoApplication.java,4\e\4ea8022d35a0fbb14985c442ee4b6ba392b59d41
 }
 Msrc/main/java/com/alura/foro/foro/me/infra/services/AutenticacionService.java,c\5\c5ab88a788c210af061cabd2d09a6bd8dc90f2c2
 }
 Msrc/main/java/com/alura/foro/foro/me/infra/exceptions/TokenNullException.java,9\b\9b5acde6fcc192161dc22544f5e5c81041c2a5b6
-x
-Hsrc/main/java/com/alura/foro/foro/me/domain/topic/DatosEdicionTopic.java,9\d\9d058943ed21d5248b8e0bec6ce507b33d6f5776
 j
 :src/main/java/com/alura/foro/foro/me/domain/user/User.java,4\5\459141e7bca061bf78787baba2264ee20dae89d0
 z
@@ -29,3 +25,9 @@ Osrc/main/java/com/alura/foro/foro/me/domain/user/DatosAutenticacionUsuario.java
 Nsrc/main/java/com/alura/foro/foro/me/infra/services/SecurityConfiguration.java,6\d\6d212d60bd477da0e6c9f49537a009f6c15c4d40
 y
 Isrc/main/java/com/alura/foro/foro/me/domain/topic/DatosCreacionTopic.java,1\e\1e2f0c9d70c7f5212825d412cd46ad7af6a83f24
+l
+<src/main/java/com/alura/foro/foro/me/domain/topic/Topic.java,e\c\ec6a720b3b0b978be15262789e34fe4466b50885
+l
+<src/main/java/com/alura/foro/foro/me/AppForoApplication.java,4\e\4ea8022d35a0fbb14985c442ee4b6ba392b59d41
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec

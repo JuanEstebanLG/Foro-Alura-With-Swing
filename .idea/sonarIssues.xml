@@ -3,6 +3,11 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="/Dummy.txt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="/GridCellEditorTextField">
           <value>
             <set />
@@ -24,6 +29,16 @@
           </value>
         </entry>
         <entry key="/fragment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/.idea/compiler.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/pom.xml">
           <value>
             <set />
           </value>
@@ -53,6 +68,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/alura/foro/foro/me/domain/topic/DatosDeleteTopic.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/alura/foro/foro/me/domain/topic/DatosEdicionTopic.java">
           <value>
             <set />
@@ -64,6 +84,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/alura/foro/foro/me/domain/topic/DatosRepsuestaTopic.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/alura/foro/foro/me/domain/topic/DatosResponseDeleteTopic.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/alura/foro/foro/me/domain/topic/DatosRespuestaDeleteTopic.java">
           <value>
             <set />
           </value>

@@ -59,10 +59,19 @@ public class TopicController {
 
     @GetMapping
     @Transactional
-    public ResponseEntity<Page<DatosListTopic>> getTopics(@PageableDefault(sort = "id", size = 10) Pageable paginacion){
+    public ResponseEntity<Page<DatosListTopic>> getTopics(@PageableDefault(sort = "id", size = 4) Pageable paginacion){
         return  ResponseEntity.ok(topicRepository.findAll(paginacion).map(DatosListTopic::new));
     }
 
+
+    @DeleteMapping
+    @Transactional
+    public ResponseEntity<DatosResponseDeleteTopic> deleteTopic(@RequestBody @Validated DatosDeleteTopic datosDeleteTopic){
+        topicRepository.deleteById(datosDeleteTopic.id());
+
+        return  ResponseEntity.ok(new DatosResponseDeleteTopic(datosDeleteTopic.id(), datosDeleteTopic.reason()));
+
+    }
 
 }
 
