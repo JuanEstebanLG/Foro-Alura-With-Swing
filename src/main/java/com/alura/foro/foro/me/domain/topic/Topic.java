@@ -1,5 +1,5 @@
 package com.alura.foro.foro.me.domain.topic;
-import com.alura.foro.foro.me.domain.user.User;
+import com.alura.foro.foro.me.domain.user.Usuario;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -24,7 +24,7 @@ public class Topic {
 
 
     @ManyToOne
-    private User usuario;
+    private Usuario usuario;
 
 
     public Topic(DatosCreacionTopic datosCreacionTopic) {

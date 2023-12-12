@@ -21,11 +21,12 @@ import java.util.List;
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
 @Embeddable
-public class User implements UserDetails{
+public class Usuario implements UserDetails{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
     private String email;
     private String telefono;
     private String nombre;
@@ -35,7 +36,7 @@ public class User implements UserDetails{
     public transient List<Topic> topics;
 
 
-    public User(DatosRegistroUsuario datosRegistroUsuario) {
+    public Usuario(DatosRegistroUsuario datosRegistroUsuario) {
 
         this.email = datosRegistroUsuario.email();
         this.telefono = datosRegistroUsuario.telefono();

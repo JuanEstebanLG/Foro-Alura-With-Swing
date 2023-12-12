@@ -1,6 +1,6 @@
 package com.alura.foro.foro.me.infra.services;
 
-import com.alura.foro.foro.me.domain.user.User;
+import com.alura.foro.foro.me.domain.user.Usuario;
 import com.alura.foro.foro.me.infra.exceptions.TokenNullException;
 import com.alura.foro.foro.me.infra.exceptions.TokenSubjectNullException;
 import com.alura.foro.foro.me.infra.exceptions.TokenVerificationException;
@@ -23,7 +23,7 @@ public class JwtService {
 
     public static final String secret = "1234567";
 
-    public String generarToken(User usuario){
+    public String generarToken(Usuario usuario){
         try {
             Algorithm algorithm = Algorithm.HMAC256(secret);
             return JWT.create()

@@ -33,6 +33,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/6.1.4/spring-security-core-6.1.4.jar!/org/springframework/security/authentication/AuthenticationManager.class">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/.idea/compiler.xml">
           <value>
             <set />
@@ -48,7 +53,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/alura/foro/foro/me/SwingUIApplication.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/alura/foro/foro/me/SwuingUIController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/alura/foro/foro/me/controllers/TopicController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/alura/foro/foro/me/controllers/UserController.java">
           <value>
             <set />
           </value>
@@ -138,6 +158,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/alura/foro/foro/me/domain/user/Usuario.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/alura/foro/foro/me/httpHandlers/HttpRequestHandler.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/alura/foro/foro/me/infra/exceptions/TokenNullException.java">
           <value>
             <set />
@@ -174,6 +204,31 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/alura/foro/foro/me/infra/services/SecurityConfiguration.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/alura/foro/foro/me/infra/services/configuration/SecurityConfiguration.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/alura/foro/foro/me/infra/services/configuration/WebClientConfiguration.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/alura/foro/foro/me/infra/services/configuration/WebSecurityConfiguration.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/alura/foro/foro/me/swingComponents/InitializeAPP.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/alura/foro/foro/me/swingComponents/Login/LoginFrame.java">
           <value>
             <set />
           </value>
