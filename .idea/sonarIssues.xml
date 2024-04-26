@@ -33,6 +33,11 @@
             <set />
           </value>
         </entry>
+        <entry key="56280325-9ab8-4394-b31a-b4dead980dc8/schema/foro-me.sql">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/6.1.4/spring-security-core-6.1.4.jar!/org/springframework/security/authentication/AuthenticationManager.class">
           <value>
             <set />
@@ -143,6 +148,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/alura/foro/foro/me/domain/user/DatosAutenticacionUsuario.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/alura/foro/foro/me/domain/user/DatosRegistroUsuario.java">
           <value>
             <set />
@@ -219,6 +229,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/alura/foro/foro/me/infra/services/configuration/WebSecurityConfiguration.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/alura/foro/foro/me/swingComponents/ForoGui/ForoFrame.java">
           <value>
             <set />
           </value>

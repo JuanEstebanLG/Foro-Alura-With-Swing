@@ -21,17 +21,20 @@ import java.util.logging.Logger;
 public class JwtService {
 
 
-    public static final String secret = "1234567";
+    public static final String SECRET = "1234567";
 
     public String generarToken(Usuario usuario){
         try {
-            Algorithm algorithm = Algorithm.HMAC256(secret);
+            Algorithm algorithm = Algorithm.HMAC256(SECRET);
             return JWT.create()
                     .withIssuer("Foro me")
                     .withSubject(usuario.getNombre())
                     .withClaim("id", usuario.getId())
                     .withExpiresAt(fechaDeExpiracion())
                     .sign(algorithm);
+
+
+
         } catch (JWTCreationException exception){
             Logger.getLogger(exception.toString());
             throw exception;
@@ -47,7 +50,7 @@ public class JwtService {
         DecodedJWT verifier = null;
 
         try {
-            Algorithm algorithm = Algorithm.HMAC256(secret);
+            Algorithm algorithm = Algorithm.HMAC256(SECRET);
             verifier = JWT.require(algorithm)
                     .withIssuer("Foro me")
                     .build()

@@ -1,6 +1,5 @@
 package com.alura.foro.foro.me.domain.user;
 
-
 import com.alura.foro.foro.me.domain.topic.Topic;
 import jakarta.persistence.*;
 import lombok.*;
@@ -43,6 +42,14 @@ public class Usuario implements UserDetails{
         this.nombre = datosRegistroUsuario.nombre();
         this.password = datosRegistroUsuario.password();
     }
+
+    public void actualizarDatos(DatosActualizarUsuario datosActualizarUsuario){
+        this.email = datosActualizarUsuario.email();
+        this.telefono = datosActualizarUsuario.telefono();
+        this.nombre = datosActualizarUsuario.nombre();
+        this.password = datosActualizarUsuario.password();
+    }
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

@@ -33,12 +33,12 @@ public class FilterService extends OncePerRequestFilter {
         if (authHeader != null) {
 
             var token = authHeader.replace("Bearer ", "");
-
+            System.out.println("Este token es el de auth " + token);
             try{
 
             String subJect = jwtToken.getSubject(token);
-            if (subJect != null) {
 
+            if (subJect != null) {
                 var usuario = usuarioRepository.findByNombre(subJect);
                 var authentication = new UsernamePasswordAuthenticationToken(usuario, null,
                         usuario.getAuthorities());

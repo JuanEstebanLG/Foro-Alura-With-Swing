@@ -1,7 +1,7 @@
 package com.alura.foro.foro.me.httpHandlers;
 
+import com.alura.foro.foro.me.infra.exceptions.WebClientUnExpectedException;
 import org.springframework.http.MediaType;
-import org.springframework.http.RequestEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 import java.nio.charset.StandardCharsets;
@@ -12,18 +12,16 @@ public class HttpRequestHandler {
 
     private static WebClient webClient;
 
-    public HttpRequestHandler(WebClient webClient){
-        this.webClient = webClient;
+    private HttpRequestHandler(WebClient webClient){
+        HttpRequestHandler.webClient = webClient;
     }
 
 
-    public static String sendHttpRequest(String name, String password) {
+    public static String sendLoginRequest(String nombre, String password) throws WebClientUnExpectedException {
         try {
             // URL de la solicitud
             String url = "http://localhost:8080";
-            String JsonBodyRequest = String.format("{ \"nombre\" : \"%s\", \"password\" : \"%s\" }", name, password);
-            WebClient client = WebClient.create();
-
+            String JsonBodyRequest = String.format("{ \"nombre\" : \"%s\", \"password\" : \"%s\" }", nombre, password);
             WebClient.RequestBodySpec request = webClient.post().uri(url + "/logins");
 
             WebClient.RequestHeadersSpec<?> headersSpec =
@@ -41,8 +39,12 @@ public class HttpRequestHandler {
 
         } catch (Exception ex) {
             ex.printStackTrace();
-           throw new RuntimeException(ex);
+           throw new WebClientUnExpectedException(ex.getMessage());
         }
+
+    }
+
+    public static void getUserUI(String JWT){
 
     }
 }

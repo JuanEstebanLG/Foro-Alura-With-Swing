@@ -12,7 +12,6 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.InternalAuthenticationServiceException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,17 +29,16 @@ public class Auth{
     @PostMapping
     @PermitAll
     @Transactional
-    public ResponseEntity<DatosJwt> autenticarUsuario(@RequestBody @Validated DatosAutenticacionUsuario datosAutenticacionUsuario) {
+    public ResponseEntity<DatosJwt> autenticarUsuario(@RequestBody @Validated DatosAutenticacionUsuario datosAutenticacionUsuario) throws InternalAuthenticationServiceException {
         System.out.println("Solicitud de login recibida");
         try {
-
 
             Authentication authToken = new UsernamePasswordAuthenticationToken(datosAutenticacionUsuario.nombre(),
                     datosAutenticacionUsuario.password());
 
-            var usuarioAutenticado = authenticationManager.authenticate(authToken);
-
-            var jwtToken = tokenService.generarToken((Usuario) usuarioAutenticado.getPrincipal());
+            Authentication usuarioAutenticado = authenticationManager.authenticate(authToken);
+            System.out.println( usuarioAutenticado.getPrincipal());
+            String jwtToken = tokenService.generarToken((Usuario) usuarioAutenticado.getPrincipal());
             return ResponseEntity.ok(new DatosJwt(jwtToken));
 
         }catch (InternalAuthenticationServiceException err){
@@ -48,7 +46,7 @@ public class Auth{
             err.printStackTrace();
             System.out.println("Exception message: " + err.getMessage());
             System.out.println("Exception cause: " + err.getCause());
-            throw new RuntimeException(err);
+            throw new InternalAuthenticationServiceException(err.getMessage());
         }
     }
 

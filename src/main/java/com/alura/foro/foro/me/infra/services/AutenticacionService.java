@@ -24,4 +24,5 @@ public class AutenticacionService implements UserDetailsService {
 
         return usuario;
     }
+
 }

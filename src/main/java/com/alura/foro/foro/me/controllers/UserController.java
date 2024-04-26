@@ -1,12 +1,12 @@
 package com.alura.foro.foro.me.controllers;
-import com.alura.foro.foro.me.domain.user.DatosRegistroUsuario;
-import com.alura.foro.foro.me.domain.user.DatosRespuestUsuario;
-import com.alura.foro.foro.me.domain.user.Usuario;
-import com.alura.foro.foro.me.domain.user.UserRepository;
+import com.alura.foro.foro.me.domain.user.*;
 
 
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -37,6 +37,26 @@ public class UserController {
         return ResponseEntity.created(url).body(datosRespuestUsuario);
 
     }
+
+    @GetMapping
+    @Transactional
+    public ResponseEntity<Page<DatosListUser>> getUsers(@PageableDefault(sort = "id", size = 4) Pageable paginacion) {
+        return ResponseEntity.ok(userRepository.findAll(paginacion).map(DatosListUser::new));
+    }
+
+    @PutMapping
+    @Transactional
+    public ResponseEntity<DatosRespuestaEdicionUsuario> updateUser(@Validated @RequestBody DatosActualizarUsuario datosActualizarUsuario, UriComponentsBuilder uri){
+        Usuario usuario = userRepository.findByEmail(datosActualizarUsuario.email());
+
+        usuario.actualizarDatos(datosActualizarUsuario);
+
+
+        return
+        ResponseEntity.ok(new DatosRespuestaEdicionUsuario(usuario.getNombre()));
+
+    }
+
 
 
 
