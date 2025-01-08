@@ -45,7 +45,7 @@
 			<optional>true</optional>
 		</dependency>
 		<dependency>
-			<groupId>org.projectlombok</groupId>
+		<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
@@ -109,9 +109,12 @@
 				<artifactId>flyway-maven-plugin</artifactId>
 				<version>9.16.3</version>
 				<configuration>
-					<url>jdbc:mysql://localhost/foro-me</url>
-					<usuario>root</usuario>
+				<url>jdbc:mysql://localhost/foro_me</url>
+					<user>root</user>
 					<password>root1234</password>
+					<locations>
+						<location>filesystem:src/main/resources/db/migration</location>
+					</locations>
 				</configuration>
 			</plugin>
 		</plugins>

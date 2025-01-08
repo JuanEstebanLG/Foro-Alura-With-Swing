@@ -2,6 +2,7 @@ package com.alura.foro.foro.me.controllers;
 import com.alura.foro.foro.me.domain.user.*;
 
 
+import com.alura.foro.foro.me.infra.services.configuration.SecurityConfiguration;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -20,13 +21,21 @@ public class UserController {
 
     @Autowired
     UserRepository userRepository;
+    @Autowired
+    SecurityConfiguration securityConfiguration;
 
 
     @PostMapping
     @Transactional
     public ResponseEntity<DatosRespuestUsuario> createUser(@RequestBody @Validated DatosRegistroUsuario datosRegistroUsuario, UriComponentsBuilder uriComponentsBuilder){
 
-        Usuario usuario = userRepository.save(new Usuario(datosRegistroUsuario));
+        String password =
+        securityConfiguration.passwordEncoder().encode(datosRegistroUsuario.contraseña());
+        DatosRegistroUsuario datosfinal = new DatosRegistroUsuario(datosRegistroUsuario.email(), datosRegistroUsuario.telefono(), datosRegistroUsuario.nombre(), password );
+
+        Usuario usuario = userRepository.save(new Usuario(datosfinal));
+
+
 
         DatosRespuestUsuario datosRespuestUsuario =
                 new DatosRespuestUsuario(usuario.getId(),

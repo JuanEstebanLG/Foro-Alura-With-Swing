@@ -1,4 +1,4 @@
-use `foro-me`;
+use `foro_me`;
 
 CREATE TABLE usuario(
 

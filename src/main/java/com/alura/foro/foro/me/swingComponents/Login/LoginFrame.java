@@ -1,6 +1,5 @@
 package com.alura.foro.foro.me.swingComponents.Login;
 import com.alura.foro.foro.me.httpHandlers.HttpRequestHandler;
-import com.alura.foro.foro.me.infra.exceptions.LoginException;
 import com.alura.foro.foro.me.swingComponents.ForoGui.ForoFrame;
 
 import javax.swing.*;
@@ -178,7 +177,8 @@ public class LoginFrame extends JFrame {
             try{
 
                 String response = HttpRequestHandler.sendLoginRequest(name, password);
-                new ForoFrame(response);
+                ForoFrame foroframe = new ForoFrame(response);
+                foroframe.setVisible(true);
                 frame.dispose();
 
             }catch (Exception exception){

@@ -29,7 +29,7 @@ public class Usuario implements UserDetails{
     private String email;
     private String telefono;
     private String nombre;
-    private String password;
+    private String contraseña;
 
     @OneToMany(mappedBy = "usuario")
     public transient List<Topic> topics;
@@ -40,14 +40,14 @@ public class Usuario implements UserDetails{
         this.email = datosRegistroUsuario.email();
         this.telefono = datosRegistroUsuario.telefono();
         this.nombre = datosRegistroUsuario.nombre();
-        this.password = datosRegistroUsuario.password();
+        this.contraseña = datosRegistroUsuario.contraseña();
     }
 
     public void actualizarDatos(DatosActualizarUsuario datosActualizarUsuario){
         this.email = datosActualizarUsuario.email();
         this.telefono = datosActualizarUsuario.telefono();
         this.nombre = datosActualizarUsuario.nombre();
-        this.password = datosActualizarUsuario.password();
+        this.contraseña = datosActualizarUsuario.password();
     }
 
 
@@ -58,7 +58,7 @@ public class Usuario implements UserDetails{
 
     @Override
     public String getPassword() {
-        return this.password;
+        return this.contraseña;
     }
 
     @Override

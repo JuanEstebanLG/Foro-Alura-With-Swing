@@ -16,7 +16,7 @@ public record DatosRegistroUsuario(
         String nombre,
 
         @NonNull
-        String password
+        String contraseña
 
 
 ) {
